@@ -12,9 +12,10 @@ _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Mixcloud from a config entry."""
-
     username = entry.data["username"]
     session = async_get_clientsession(hass)
+
+    # Im hass.data speichern
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = {
         "username": username,
@@ -23,7 +24,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     _LOGGER.debug("Setting up Mixcloud entry for user '%s'", username)
 
-    # **GENAU SO!**
+    # *** NEUE API: Plattformen als Liste, Entry als einzelnes Objekt! ***
     await hass.config_entries.async_forward_entry_setups(["sensor"], entry)
     return True
 
@@ -32,7 +33,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     unload_ok = await hass.config_entries.async_unload_platforms(entry, ["sensor"])
     if unload_ok:
         hass.data[DOMAIN].pop(entry.entry_id, None)
-    _LOGGER.debug("Unloaded Mixcloud entry for user '%s'", entry.data["username"])
+        _LOGGER.debug("Unloaded Mixcloud entry for user '%s'", entry.data["username"])
     return unload_ok
 
 async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
