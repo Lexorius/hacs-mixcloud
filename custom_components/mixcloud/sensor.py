@@ -3,7 +3,6 @@ from homeassistant.helpers.update_coordinator import (
     DataUpdateCoordinator,
     CoordinatorEntity,
 )
-from homeassistant.const import DEVICE_CLASS_TIMESTAMP
 from datetime import timedelta
 import aiohttp
 import asyncio
