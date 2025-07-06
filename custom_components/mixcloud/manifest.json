@@ -1,0 +1,10 @@
+{
+  "domain": "mixcloud",
+  "name": "Mixcloud",
+  "documentation": "https://github.com/Lexorius/hacs-mixcloud",
+  "dependencies": [],
+  "codeowners": ["@Lexorius"],
+  "requirements": [],
+  "version": "0.0.1",
+  "config_flow": true
+}

@@ -1,0 +1,10 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mixcloud Integration einrichten",
+        "description": "Bitte gib deinen Mixcloud-Benutzernamen oder Profil-URL ein."
+      }
+    }
+  }
+}
