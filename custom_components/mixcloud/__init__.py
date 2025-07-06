@@ -24,7 +24,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     _LOGGER.debug("Setting up Mixcloud entry for user '%s'", username)
 
     # AB HASS 2024.7+: Nur noch Entry, keine Liste mehr!
-    await hass.config_entries.async_forward_entry_setups("sensor", entry)
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor"])
     return True
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
