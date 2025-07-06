@@ -15,14 +15,14 @@ class MixcloudClient:
             async with self._session.get(base_url) as resp:
                 if resp.status != 200:
                     raise MixcloudError(f"Fehler beim Laden des Profils: {resp.status}")
-                profile = await resp.json()
+                profile = await resp.json(content_type=None)
 
             # Uploads abrufen (cloudcasts)
             uploads_url = f"{base_url}cloudcasts/?limit=1&order_by=published"
             async with self._session.get(uploads_url) as resp:
                 if resp.status != 200:
                     raise MixcloudError(f"Fehler beim Laden der Uploads: {resp.status}")
-                uploads = await resp.json()
+                uploads = await resp.json(content_type=None)
                 last_upload = uploads["data"][0] if uploads["data"] else None
 
             return {
