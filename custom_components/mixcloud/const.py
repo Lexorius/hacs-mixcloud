@@ -1,4 +1,4 @@
-DOMAIN = "mixcloud"
+DOMAIN = "hacs-mixcloud-api"
 
 API_BASE_URL = "https://api.mixcloud.com"
 

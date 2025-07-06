@@ -1,10 +1,11 @@
 {
   "domain": "mixcloud",
   "name": "Mixcloud",
-  "documentation": "https://github.com/Lexorius/hacs-mixcloud",
+  "documentation": "https://github.com/Lexorius/homeassistant-mixcloud-api",
+  "issue_tracker": "https://github.com/Lexorius/homeassistant-mixcloud-api/issues",
   "dependencies": [],
   "codeowners": ["@Lexorius"],
   "requirements": [],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "config_flow": true
 }
