@@ -1,6 +1,5 @@
 # Mixcloud Home Assistant Integration
 
-**Version 1.0.0**
 
 This custom component integrates [Mixcloud](https://www.mixcloud.com/) user data into [Home Assistant](https://www.home-assistant.io/) via HACS. It provides sensors for follower counts, uploads, and profile information for any public Mixcloud user.
 
